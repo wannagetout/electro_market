@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "market"
+version = "0.1.0"
+description = ""
+authors = ["wannagetout <inv.moiseev@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+google-api-python-client = "^2.78.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
