@@ -1,4 +1,3 @@
-import pytest
 from item import Item
 
 
