@@ -1,5 +1,5 @@
 class Item:
-	discount = 0
+	discount = 1
 	items = []
 
 	def __init__(self, item_name, price, amount):
@@ -12,4 +12,5 @@ class Item:
 		return self.price * self.amount
 
 	def calculate_discount(self):
-		return self.price * self.discount
+		self.price = int(self.price * self.discount)
+		return self.price
