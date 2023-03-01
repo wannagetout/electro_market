@@ -38,3 +38,10 @@ class Item:
 	@item_name.setter
 	def item_name(self, value):
 		self.__item_name = value
+
+	def __repr__(self):
+		return f"{self.__item_name}, {self.price}, {self.amount}"
+
+	def __str__(self):
+		return f"{self.__item_name}"
+
