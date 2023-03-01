@@ -16,7 +16,12 @@ def test_length_check():
 		item.item_name()
 
 
-
 def test_integer_check():
 	assert (Item.is_integer(7.0) == True)
 	assert (Item.is_integer(5.6) == False)
+
+
+def test_magic_attr():
+	item1 = Item('Телефон', 10000, 5)
+	assert (item1.__repr__() == 'Телефон', 10000, 5)
+	assert (item1.__str__() == 'Телефон')
