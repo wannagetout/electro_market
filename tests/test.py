@@ -32,7 +32,7 @@ def test_add_sim_to_phone():
 	phone1 = Phone("iPhone 14", 120_000, 5, 2)
 	assert (phone1.sim_value == 2)
 	with pytest.raises(ValueError):
-		phone1.sim_value = 0
+		phone1.sim_value = -1
 		phone1.sim_value()
 
 
