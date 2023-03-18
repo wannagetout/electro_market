@@ -13,10 +13,11 @@ class Phone(Item):
 
 	@sim_value.setter
 	def sim_value(self, value: int) -> None:
-		if value < 0:
+		if value > 0:
 			if type(value) is int:
 				self.__sim = value
-		raise ValueError('Количество физических SIM-карт должно быть целым числом больше нуля.')
+		else:
+			raise ValueError('Количество физических SIM-карт должно быть целым числом больше нуля.')
 
 	def __add__(self, other):
 		if isinstance(other, Phone):
@@ -32,6 +33,6 @@ print(phone1)
 print(phone2)
 print(repr(phone1))
 print(repr(phone2))
-# phone1.sim_value = 0
+phone1.sim_value = 0
 
 print(phone1 + phone2)
