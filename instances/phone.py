@@ -25,14 +25,3 @@ class Phone(Item):
 
 	def __repr__(self):
 		return f"Phone('{self.item_name}', {self.price}, {self.amount}, {self.__sim})"
-
-
-phone1 = Phone("iPhone 14", 120_000, 5, 2)
-phone2 = Phone("iPhone 15", 140_000, 3, 1)
-print(phone1)
-print(phone2)
-print(repr(phone1))
-print(repr(phone2))
-phone1.sim_value = 0
-
-print(phone1 + phone2)
