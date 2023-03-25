@@ -1,6 +1,9 @@
 import csv
 
-# from instances.phone import Phone
+
+class InstantiateCsvError(Exception):
+	pass
+
 
 
 class Item:
@@ -22,10 +25,16 @@ class Item:
 
 	@staticmethod
 	def instantiate_from_csv():
-		with open('items.csv', 'r', encoding='windows-1251') as file:
-			file = csv.DictReader(file, dialect='excel')
-			for row in file:
-				Item(item_name=row['name'], price=row['price'], amount=row['quantity'])
+		try:
+			with open('items.csv', 'r', encoding='windows-1251') as file:
+				file = csv.DictReader(file, dialect='excel')
+				for row in file:
+					Item(item_name=row['name'], price=float(row['price']), amount=int(row['quantity']))
+		except FileNotFoundError:
+			print('Отсутствует файл item.csv')
+		except:
+			raise InstantiateCsvError('Файл items.csv повреждён')
+
 
 	@staticmethod
 	def is_integer(value):
@@ -50,4 +59,3 @@ class Item:
 
 	def __str__(self):
 		return f"{self.__item_name}"
-
